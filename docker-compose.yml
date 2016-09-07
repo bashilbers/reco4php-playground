@@ -1,0 +1,42 @@
+version: "2"
+
+services:
+  arango_data:
+    container_name: arangodb-persist
+    image: arangodb
+    entrypoint: /bin/bash
+
+  arangodb:
+    image: arangodb
+    container_name: arangodb-instance
+    volumes_from:
+      - "arango_data"
+    ports:
+      - "8529:8529"
+    environment:
+      - "ARANGO_ROOT_PASSWORD=root"
+
+  neo4j_data:
+    container_name: neoj4-persist
+    image: neo4j:3.0.4
+    entrypoint: /bin/bash
+
+  neo4j:
+    container_name: neo4j
+    image: neo4j:3.0.4
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes_from:
+      - "neo4j_data"
+    environment:
+      - "NEO4J_AUTH=none"
+
+  php:
+    build: ./app
+    volumes:
+      - ./app:/app
+    links:
+      - neo4j
+      - arangodb
+    entrypoint: /bin/bash

@@ -1,0 +1,14 @@
+{
+  "require": {
+    "graphaware/reco4php": "2.0.2",
+    "graphaware/neo4j-php-client": "4.5.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.1"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Bas\\Reco4PHP\\Tests\\": "tests/"
+    }
+  }
+}
