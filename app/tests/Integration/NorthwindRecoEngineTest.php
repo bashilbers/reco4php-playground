@@ -6,6 +6,7 @@ use Bas\Reco4PHP\Tests\Integration\Model\RecoEngine;
 use GraphAware\Neo4j\Client\Client;
 use GraphAware\Neo4j\Client\ClientBuilder;
 use GraphAware\Reco4PHP\Context\SimpleContext;
+use GraphAware\Reco4PHP\Persistence\DatabaseService;
 use GraphAware\Reco4PHP\RecommenderService;
 
 class NorthwindRecoEngineTest extends \PHPUnit_Framework_TestCase
@@ -22,11 +23,11 @@ class NorthwindRecoEngineTest extends \PHPUnit_Framework_TestCase
 
     function setUp()
     {
-        $this->recoService = RecommenderService::create('bolt://neo4j');
+        $client = DatabaseService::neo4j('bolt://neo4j');
+
+        $this->recoService = new RecommenderService($client);
         $this->recoService->registerRecommendationEngine(new RecoEngine());
-        $this->client = ClientBuilder::create()
-            ->addConnection('default', 'bolt://neo4j')
-            ->build();
+        $this->client = $client->getDriver();
     }
 
     public function testRecoForRoland()

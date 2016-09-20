@@ -2,5 +2,5 @@
 
 docker run -it --rm \
     -v $(pwd)/app:/src \
-    -v ~/.composer/cache/ \
+    -v ~/.composer:/root/.composer \
     bashilbers/composer update --ignore-platform-reqs

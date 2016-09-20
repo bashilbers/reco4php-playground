@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0a7ac7cf312f1fc88696acef5d718a26",
-    "content-hash": "ffdbb27747abf12378c6a33a638e1e4b",
+    "hash": "fcbb0fbf586f3089fd11d5b2058eeb87",
+    "content-hash": "02b9db34a444712b5208f04470a0dfc5",
     "packages": [
         {
             "name": "graphaware/neo4j-bolt",
@@ -55,15 +55,15 @@
         },
         {
             "name": "graphaware/neo4j-common",
-            "version": "3.2.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/graphaware/neo4j-php-commons.git",
+                "url": "https://github.com/clansman-nl/neo4j-php-commons.git",
                 "reference": "bd731f43ba2f2d181ee6d770a91a3585a3f1d3b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/graphaware/neo4j-php-commons/zipball/bd731f43ba2f2d181ee6d770a91a3585a3f1d3b0",
+                "url": "https://api.github.com/repos/clansman-nl/neo4j-php-commons/zipball/bd731f43ba2f2d181ee6d770a91a3585a3f1d3b0",
                 "reference": "bd731f43ba2f2d181ee6d770a91a3585a3f1d3b0",
                 "shasum": ""
             },
@@ -79,7 +79,11 @@
                     "GraphAware\\Common\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "GraphAware\\Common\\Tests\\": "tests/"
+                }
+            },
             "license": [
                 "ApacheV2"
             ],
@@ -97,19 +101,22 @@
                 "neo4j",
                 "statement"
             ],
+            "support": {
+                "source": "https://github.com/clansman-nl/neo4j-php-commons/tree/3.2.1"
+            },
             "time": "2016-06-13 09:51:10"
         },
         {
             "name": "graphaware/neo4j-php-client",
-            "version": "4.5.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/graphaware/neo4j-php-client.git",
+                "url": "https://github.com/clansman-nl/neo4j-php-client.git",
                 "reference": "af8f01475a3cf63549498449574eb9c4bb8e7254"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/graphaware/neo4j-php-client/zipball/af8f01475a3cf63549498449574eb9c4bb8e7254",
+                "url": "https://api.github.com/repos/clansman-nl/neo4j-php-client/zipball/af8f01475a3cf63549498449574eb9c4bb8e7254",
                 "reference": "af8f01475a3cf63549498449574eb9c4bb8e7254",
                 "shasum": ""
             },
@@ -132,7 +139,11 @@
                     "GraphAware\\Neo4j\\Client\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "GraphAware\\Neo4j\\Client\\Tests\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -154,19 +165,22 @@
                 "http",
                 "neo4j"
             ],
+            "support": {
+                "source": "https://github.com/clansman-nl/neo4j-php-client/tree/4.5.3"
+            },
             "time": "2016-09-04 22:05:14"
         },
         {
             "name": "graphaware/reco4php",
-            "version": "2.0.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/graphaware/reco4php.git",
+                "url": "https://github.com/clansman-nl/reco4php.git",
                 "reference": "58f1bcdbf880bba5aee407120829d400b7233fae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/graphaware/reco4php/zipball/58f1bcdbf880bba5aee407120829d400b7233fae",
+                "url": "https://api.github.com/repos/clansman-nl/reco4php/zipball/58f1bcdbf880bba5aee407120829d400b7233fae",
                 "reference": "58f1bcdbf880bba5aee407120829d400b7233fae",
                 "shasum": ""
             },
@@ -186,7 +200,12 @@
                     "GraphAware\\Reco4PHP\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "GraphAware\\Reco4PHP\\Tests\\": "tests/",
+                    "GraphAware\\Reco4PHP\\Demo\\": "_demo/"
+                }
+            },
             "license": [
                 "ApacheV2"
             ],
@@ -197,6 +216,9 @@
                 }
             ],
             "description": "Neo4j based Recommendation Engine Framework for PHP",
+            "support": {
+                "source": "https://github.com/clansman-nl/reco4php/tree/2.0.2"
+            },
             "time": "2016-06-16 16:30:21"
         },
         {
@@ -1911,9 +1933,32 @@
             "time": "2016-08-09 15:02:57"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "2.0.2",
+            "alias_normalized": "2.0.2.0",
+            "version": "9999999-dev",
+            "package": "graphaware/reco4php"
+        },
+        {
+            "alias": "4.5.3",
+            "alias_normalized": "4.5.3.0",
+            "version": "9999999-dev",
+            "package": "graphaware/neo4j-php-client"
+        },
+        {
+            "alias": "3.2.1",
+            "alias_normalized": "3.2.1.0",
+            "version": "9999999-dev",
+            "package": "graphaware/neo4j-common"
+        }
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "graphaware/reco4php": 20,
+        "graphaware/neo4j-php-client": 20,
+        "graphaware/neo4j-common": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

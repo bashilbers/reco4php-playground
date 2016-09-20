@@ -1,7 +1,8 @@
 {
   "require": {
-    "graphaware/reco4php": "2.0.2",
-    "graphaware/neo4j-php-client": "4.5.3"
+    "graphaware/reco4php": "dev-master as 2.0.2",
+    "graphaware/neo4j-php-client": "dev-master as 4.5.3",
+    "graphaware/neo4j-common": "dev-master as 3.2.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.1"
@@ -10,5 +11,19 @@
     "psr-4": {
       "Bas\\Reco4PHP\\Tests\\": "tests/"
     }
-  }
+  },
+  "repositories": [
+    {
+      "url": "http://github.com/clansman-nl/reco4php",
+      "type": "vcs"
+    },
+    {
+      "url": "http://github.com/clansman-nl/neo4j-php-client",
+      "type": "vcs"
+    },
+    {
+      "url": "http://github.com/clansman-nl/neo4j-php-commons",
+      "type": "vcs"
+    }
+  ]
 }
